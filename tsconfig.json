@@ -13,5 +13,11 @@
     {
       "path": "./tsconfig.spec.json"
     }
-]
+],"compilerOptions": {
+  "outDir": "build/dist",
+  "rootDir": "src",
+  "baseUrl": ".",
+    "experimentalDecorators": true
+  
+}
 }

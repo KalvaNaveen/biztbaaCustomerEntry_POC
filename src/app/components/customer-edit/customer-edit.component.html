@@ -1,0 +1,119 @@
+
+<div class="form__container" >
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit(submitbtnText)" class="form__container-body">
+    
+ <!-- Name Field -->
+  <mat-form-field>
+    <mat-label>Name*</mat-label>
+    <input id="name" type="text" formControlName="name" matInput />
+    <mat-error
+      *ngIf="
+        customerForm.get('name').hasError('pattern') &&
+        !customerForm.get('name').hasError('required')
+      "
+    >
+      Please enter a valid Name
+    </mat-error>
+    <mat-error *ngIf="customerForm.get('name').hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+ <!-- Date Field Control -->
+  <mat-form-field appearance="fill">
+    <mat-label>Date of Birth*</mat-label>
+    <input
+      id="dateofbirth"
+      matInput
+      [matDatepicker]="picker1"
+      formControlName="dateofbirth"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+
+    <mat-error *ngIf="customerForm.get('dateofbirth').hasError('required')">
+      Date of Birth is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+ <!-- Email Field Control -->
+  <mat-form-field>
+    <mat-label>Email*</mat-label>
+    <input id="email" type="email" matInput formControlName="email" />
+    <mat-error
+      *ngIf="
+        customerForm.get('email').hasError('email') &&
+        !customerForm.get('email').hasError('required')
+      "
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="customerForm.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+ <!-- Phone Number Field Control -->
+  <mat-form-field>
+    <mat-label>Phone Number*</mat-label>
+    <input id="phone_number" type="tel" matInput formControlName="phone_number" />
+    <mat-error
+      *ngIf="
+        customerForm.get('phone_number').hasError('pattern') &&
+        !customerForm.get('phone_number').hasError('required')
+      "
+    >
+      Please enter a valid Phone Number
+    </mat-error>
+    <mat-error *ngIf="customerForm.get('phone_number').hasError('required')">
+      Phone Number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+ <!-- City Field Control -->
+  <mat-form-field>
+    <mat-label>City*</mat-label>
+    <input id="city" type="text" matInput formControlName="city" />
+    <mat-error
+      *ngIf="
+        customerForm.get('city').hasError('pattern') &&
+        !customerForm.get('city').hasError('required')
+      "
+    >
+      Please enter a valid City Name
+    </mat-error>
+    <mat-error *ngIf="customerForm.get('city').hasError('required')">
+      Phone Number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+ <!-- Status Field Control -->
+  <mat-form-field appearance="fill">
+    <mat-label>Status*</mat-label>
+    <mat-select id="status" formControlName="status">
+      <mat-option value="Active">Active</mat-option>
+      <mat-option value="Inactive">Inactive</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+ <!-- submit and Close buttons -->
+ 
+</form>
+
+<div>
+<button type="button" (click)="gotoListPage()" mat-raised-button style="margin: 0 25px;">
+    cancel
+  </button>
+  <button type="submit"
+    (click)="onSubmit(submitbtnText)"
+    [disabled]="customerForm.invalid"
+    mat-raised-button
+    color="primary"
+   
+  >
+   <span> {{submitbtnText}} </span> 
+  </button>
+</div>
+
+<mat-spinner style="margin: 25px;" [diameter]="50" color="accent"  *ngIf="requestSpinner"></mat-spinner>
+</div>

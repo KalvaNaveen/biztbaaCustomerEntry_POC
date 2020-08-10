@@ -1,0 +1,15 @@
+.form__container{
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
+}
+
+.form__container-body{
+    display: flex; flex-direction: column; justify-content: center;width: calc(100vw - 75vw);
+margin: 100px 0 50px;
+}
+
+.md-spinner {
+    float:left; 
+    width: 24px; 
+    height: 24px; 
+    margin: 5px 10px 0px 0px;
+  }

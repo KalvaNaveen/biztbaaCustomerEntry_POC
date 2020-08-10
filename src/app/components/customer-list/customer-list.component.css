@@ -1,0 +1,59 @@
+.table_Container{
+    height: calc(100vh - 64px); 
+    overflow: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f4f3f3;
+  }
+  
+  /*-----------------------------
+   TABLE STYLE CHANGES
+   ---------------------------- */
+  
+  table {
+    margin-top: 20px;;
+      width: 90%;
+      text-align:center ; 
+    }
+    th{
+      position: sticky;
+      top: 0;
+      background-color: #d5d5d7;
+      z-index: 1;
+       text-align:center !important; 
+    }
+
+     
+    .mat-form-field {
+      width: 280px;
+      margin: 0 0 0 65px;
+      font-size: 2rem;
+      margin-top: 1%
+    }
+     
+    .footer_container{
+      position: sticky;
+      bottom: 0;
+      background-color: white;
+      z-index: 1;
+    }
+  
+   .mat-header-cell{
+     width: 250px;
+   }
+  
+   a,a:active,a:visited{
+     text-decoration: none;
+     color:#ab6606;
+   }
+  
+   .mat-checkbox{
+      padding-left: 15px;
+   }
+   i{
+    font-size: 1.8rem;
+    margin: 0 .8rem 0 .5rem;
+   }
+
+  

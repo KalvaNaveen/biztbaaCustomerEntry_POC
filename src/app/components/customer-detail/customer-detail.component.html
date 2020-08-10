@@ -1,0 +1,35 @@
+<div *ngIf="!activateSpinner" class="flex__container customer__details-Container">
+  <div class="flex__container customer__image-container">
+    <mat-icon class="customer__avator">account_circle</mat-icon>
+  </div>
+  <div class="flex__container customer__info-container">
+    <div>
+      <div class="customer__info-field">
+        Name : <span class="customer__info-span">{{ name }}</span>
+      </div>
+      <div class="customer__info-field">
+        Email : <span class="customer__info-span">{{ email }}</span>
+      </div>
+      <div class="customer__info-field">
+        PhoneNumber : <span class="customer__info-span">{{ phonenumber }}</span>
+      </div>
+    </div>
+    <div>
+      <div class="customer__info-field">
+        Date Of Birth :
+        <span class="customer__info-span">{{ dateofbirth }}</span>
+      </div>
+      <div class="customer__info-field">
+        City : <span class="customer__info-span">{{ city }}</span>
+      </div>
+      <div class="customer__info-field">
+        Status : <span class="customer__info-span">{{ status }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="spinner__position">
+  <mat-spinner *ngIf="activateSpinner"></mat-spinner>
+</div>

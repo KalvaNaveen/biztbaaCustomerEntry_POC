@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="toolbar">
+    <div>
+     <span style="padding-right:10px;" >Customer {{hearderText}} </span>        
+     <button *ngIf="hearderText==='List'"  mat-raised-button color="accent" matTooltip="To Create New Customer" (click)="addCustomerForm('Add')"><mat-icon >add</mat-icon></button> 
+    </div>
+
+    <mat-form-field *ngIf="hearderText==='List'" class="toolbar__search" >
+      <mat-label>search</mat-label>
+        <input matInput placeholder="search" autocomplete="off" (keyup)=applyFilter($event.target.value) >
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+</mat-toolbar>
